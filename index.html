@@ -19,10 +19,6 @@
       <h1>
 <a id="seaweedfs" class="anchor" href="#seaweedfs" aria-hidden="true"><span class="octicon octicon-link"></span></a>SeaweedFS</h1>
 
-<p><a href="https://travis-ci.org/chrislusf/seaweedfs"><img src="https://travis-ci.org/chrislusf/seaweedfs.svg?branch=master" alt="Build Status"></a>
-<a href="https://godoc.org/github.com/chrislusf/seaweedfs/go"><img src="https://godoc.org/github.com/chrislusf/seaweedfs/go?status.svg" alt="GoDoc"></a>
-<a href="https://github.com/chrislusf/seaweedfs/wiki"><img src="https://img.shields.io/badge/docs-wiki-blue.svg" alt="Wiki"></a></p>
-
 <p><img src="https://raw.githubusercontent.com/chrislusf/seaweedfs/master/note/seaweedfs.png" alt="SeaweedFS Logo"></p>
 
 <h2>
@@ -35,53 +31,10 @@
 <li>to serve the files fast!</li>
 </ol>
 
-<p>Instead of supporting full POSIX file system semantics, SeaweedFS choose to implement only a key~file mapping. Similar to the word "NoSQL", you can call it as "NoFS".</p>
+      <h2>Useful Links</h2>
+<p><a href="https://github.com/chrislusf/seaweedfs">https://github.com/chrislusf/seaweedfs</a> has up-to-date information.</p>
+<p>Visit <a href="https://github.com/chrislusf/seaweedfs/wiki">SeaweedFS Wiki</a> for documentation.</p>
 
-<p>Instead of managing all file metadata in a central master, SeaweedFS choose to manages file volumes in the central master, and let volume servers manage files and the metadata. This relieves concurrency pressure from the central master and spreads file metadata into volume servers' memories, allowing faster file access with just one disk read operation!</p>
-
-<p>SeaweedFS models after <a href="http://www.usenix.org/event/osdi10/tech/full_papers/Beaver.pdf">Facebook's Haystack design paper</a>.</p>
-
-<p>SeaweedFS costs only 40 bytes disk storage for each file's metadata. It is so simple with O(1) disk read that you are welcome to challenge the performance with your actual use cases.</p>
-
-<p><img src="https://api.bintray.com/packages/chrislusf/seaweedfs/seaweedfs/images/download.png" alt="">
-<a href="https://bintray.com/chrislusf/seaweedfs/seaweedfs">https://bintray.com/chrislusf/seaweedfs/seaweedfs</a> Download latest compiled binaries for different platforms here.</p>
-
-<p><a href="http://groups.google.com/group/weed-file-system">http://groups.google.com/group/weed-file-system</a> SeaweedFS Discussion Group</p>
-
-<h2>
-<a id="additional-features" class="anchor" href="#additional-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional Features</h2>
-
-<ul>
-<li>Can choose no replication or different replication level, rack and data center aware</li>
-<li>Automatic master servers failover. No single point of failure, SPOF.</li>
-<li>Automatic Gzip compression depending on file mime type</li>
-<li>Automatic compaction to reclaimed disk spaces after deletion or update</li>
-<li>Servers in the same cluster can have different disk spaces, different file systems, different OS</li>
-<li>Adding/Removing servers do not cause any data re-balancing</li>
-<li>Optional <a href="https://github.com/chrislusf/seaweedfs/wiki/Filer">filer server</a> provides "normal" directories and files via http</li>
-<li>For jpeg pictures, optionally fix the orientation.</li>
-<li>Support Etag, Accept-Range, Last-Modified, etc.</li>
-<li>Support in-memory/leveldb/boltdb mode tuning for memory/performance balance.</li>
-</ul>
-
-<h2>
-<a id="installation-guide-for-users-who-are-not-familiar-with-golang" class="anchor" href="#installation-guide-for-users-who-are-not-familiar-with-golang" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation guide for users who are not familiar with golang</h2>
-
-<p>step 1: install go on your machine and setup the environment by following the instructions from the following link:</p>
-
-<p><a href="https://golang.org/doc/install">https://golang.org/doc/install</a></p>
-
-<p>make sure you set up your $GOPATH</p>
-
-<p>step 2: also you may need to install Mercurial by following the instructions below</p>
-
-<p><a href="http://mercurial.selenic.com/downloads">http://mercurial.selenic.com/downloads</a></p>
-
-<p>step 3: download, compile, and install the project by executing the following command</p>
-
-<p>go get github.com/chrislusf/seaweedfs/go/weed</p>
-
-<p>once this is done, you should see the executable "weed" under $GOPATH/bin</p>
 
       <footer class="site-footer">
 
